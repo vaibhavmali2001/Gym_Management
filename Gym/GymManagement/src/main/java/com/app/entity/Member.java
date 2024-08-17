@@ -1,0 +1,99 @@
+package com.app.entity;
+
+import java.util.Arrays;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+
+@Entity
+public class Member {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	private String name;
+	private int age;
+	private String contact;
+	private String email;
+	@Lob
+	@Column(length = 16777215)
+	private byte[] profilePic; 
+	private String adharNumber;
+	private String password;
+	public Member() {
+		super();
+	}
+	public Member(int id, String name, int age, String contact, String email, byte[] profilePic, String adharNumber,
+			String password) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.contact = contact;
+		this.email = email;
+		this.profilePic = profilePic;
+		this.adharNumber = adharNumber;
+		this.password = password;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public byte[] getProfilePic() {
+		return profilePic;
+	}
+	public void setProfilePic(byte[] profilePic) {
+		this.profilePic = profilePic;
+	}
+	public String getAdharNumber() {
+		return adharNumber;
+	}
+	public void setAdharNumber(String adharNumber) {
+		this.adharNumber = adharNumber;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", name=" + name + ", age=" + age + ", contact=" + contact + ", email=" + email
+				+ ", profilePic=" + Arrays.toString(profilePic) + ", adharNumber=" + adharNumber + ", password="
+				+ password + "]";
+	}
+	
+	
+	
+}

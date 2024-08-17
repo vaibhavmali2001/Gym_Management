@@ -1,0 +1,15 @@
+package com.app.config;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+@Configuration
+public class WebConfig {
+
+    @Bean
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setMaxUploadSize(10000000); // Set your maximum upload size if needed
+        return resolver;
+    }
+}

@@ -1,0 +1,6 @@
+package com.app.config;
+
+public class Snippet {
+	DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'multipart/form-data;boundary=----WebKitFormBoundaryXDqiaNv3WYhfmCND;charset=UTF-8' is not supported]
+}
+

@@ -1,0 +1,23 @@
+package com.app.service;
+
+import java.util.List;
+
+import com.app.dto.LoginDto;
+import com.app.dto.MemberDto;
+import com.app.entity.Member;
+
+public interface MemberService {
+
+	void newMember(MemberDto memberDto);
+
+	List<Member> fetchall();
+
+	Member fetchById(int id);
+
+	boolean updateMember(int id, Member member);
+
+	boolean memberLogin(LoginDto loginDto);
+
+	void memberDelete(int id);
+
+}

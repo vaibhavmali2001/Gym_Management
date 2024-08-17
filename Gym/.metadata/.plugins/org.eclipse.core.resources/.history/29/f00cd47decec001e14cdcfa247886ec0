@@ -1,0 +1,30 @@
+package com.app.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.dto.MemberDto;
+import com.app.entity.Member;
+import com.app.repo.MemberRepo;
+
+@Service
+public class MemberServiceImpl implements MemberService{
+	
+	@Autowired
+	private MemberRepo memberRepo;
+
+	@Override
+	public void newMember(MemberDto memberDto) {
+		Member member=new Member(memberDto.getId(),
+								 memberDto.getName(),
+								 memberDto.getAge(),
+								 memberDto.getContact(),
+								 memberDto.getEmail(),
+								 memberDto.getProfilePic(),
+								 memberDto.getAdharNumber());
+		memberRepo.save(member);
+		
+	}
+	
+	
+}
